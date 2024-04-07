@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your website description here" />
+    <meta name="author" content="Your Name" />
+    <!-- Include Tailwind CSS from CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="https://www.td.com/etc.clientlibs/tdsite/clientlibs/clientlib-wealth/resources/images/wealth-favicon.ico"
+      type="image/vnd.microsoft.icon" />
+
+    <title>Your Website Title</title>
+
+    <!-- Add your stylesheets, meta tags, or other head elements here -->
+
+    <!-- Example: External stylesheet link -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- Example: Favicon -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+  </head>
+  <body>
+    <div class="grid place-items-center mt-20">
+      <h3
+        class="text-2xl capitalize font-medium font-medium mb-5 text-green-800">
+        welcome to online banking
+      </h3>
+      <form class="shadow-2xl p-5" onsubmit="validateForm(event)">
+        <div class="flex flex-col gap-3">
+          <span class="text-xl">User name</span>
+          <input
+            id="username"
+            class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            type="text"
+            required />
+        </div>
+        <div class="flex flex-col gap-3 mt-3">
+          <span class="text-xl">Password</span>
+          <input
+            id="password"
+            class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            type="password"
+            required />
+          <span class="text-sm text-red-600" id="error"></span>
+        </div>
+        <div class="flex gap-2 my-3">
+          <input type="checkbox" />
+          <p>Remember me</p>
+        </div>
+        <input
+          class="mx-auto my-3 block px-12 rounded hover:text-white hover:bg-green-800 cursor-pointer py-1"
+          type="submit"
+          value="Log in" />
+        <a
+          class="my-5 text-center text-green-800 underline"
+          href="https://onlinebanking.tdbank.com/#/authentication/usernamePasswordHelp">
+          <h5 class="">Forgot user name and/or password?</h5>
+        </a>
+      </form>
+    </div>
+    <script>
+      function validateForm(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Get the values of username and password
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var error = document.getElementById("error");
+
+        // Validate username and password
+        if (username === "Rose55989" && password === "@rosemuller") {
+          // If valid, navigate to a new page (replace 'newpage.html' with your actual page)
+          window.location.href = "profile.html";
+        } else {
+          error.innerHTML = "Invalid username or password";
+        }
+      }
+    </script>
+  </body>
+</html>
